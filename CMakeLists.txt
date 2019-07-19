@@ -30,8 +30,12 @@ include_directories(
 )
 
 add_executable(plane_detect_node src/plane_detect_node.cpp src/plane_detect.cpp)
+add_executable(plane_removal_node src/plane_removal_node.cpp src/plane_removal.cpp)
 
 
 target_link_libraries(plane_detect_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(plane_removal_node
   ${catkin_LIBRARIES}
 )
