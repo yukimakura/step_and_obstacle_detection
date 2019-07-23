@@ -1,5 +1,5 @@
-#ifndef   PLANE_DETECT_HPP
-#define   PLANE_DETECT_HPP
+#ifndef   OBSTACLE_DETECT_HPP
+#define   OBSTACLE_DETECT_HPP
 #include "ros/ros.h"
 #include "sensor_msgs/PointCloud2.h"
 #include <pcl/ModelCoefficients.h>  
@@ -13,20 +13,24 @@
 #include <pcl/sample_consensus/model_types.h>  
 #include <pcl/segmentation/sac_segmentation.h>  
 #include <pcl/segmentation/extract_clusters.h>  
-#include <pcl/visualization/cloud_viewer.h> 
+#include <pcl/visualization/cloud_viewer.h>  
+
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include <pcl_conversions/pcl_conversions.h>
 
-class plane_detect{
+class obstacle_detect{
     private:
         ros::NodeHandle nh_;
-        double threshould_;
+        double cluster_tolerance_;
+        int min_cluster_size_;
+        int max_cluster_size_;
+
         ros::Subscriber pcl_sub_;
         ros::Publisher pcl_pub_;
         void point_cloud_CB_(const sensor_msgs::PointCloud2ConstPtr&);
         
     public:
-        plane_detect();
+        obstacle_detect();
 };
-#endif //PLANE_DETECT_HPP
+#endif//OBSTACLE_DETECT_HPP

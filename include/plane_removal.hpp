@@ -1,3 +1,5 @@
+#ifndef   PLANE_REMOVAL_HPP
+#define   PLANE_REMOVAL_HPP
 #include "ros/ros.h"
 #include "sensor_msgs/PointCloud2.h"
 #include <pcl/ModelCoefficients.h>  
@@ -29,3 +31,4 @@ class plane_removal{
     public:
         plane_removal();
 };
+#endif//PLANE_REMOVAL_HPP
