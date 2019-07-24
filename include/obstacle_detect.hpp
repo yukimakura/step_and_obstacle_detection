@@ -19,6 +19,9 @@
 #include <pcl/point_cloud.h>
 #include <pcl_conversions/pcl_conversions.h>
 
+#pragma GCC optimize ("O3") // 最適化レベルの変更 O0〜O3 などを指定
+#pragma GCC target ("avx")  // ターゲットの変更 sse4, avx, avx2 など
+
 class obstacle_detect{
     private:
         ros::NodeHandle nh_;

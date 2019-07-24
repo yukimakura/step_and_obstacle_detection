@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="plane_detect_pcl" name="downsampling_node" type="downsampling_node">
+        <param name="leafsize_x" value="0.05"/>
+        <param name="leafsize_y" value="0.05"/>
+        <param name="leafsize_z" value="0.05"/>
+    </node>
+    <node pkg="plane_detect_pcl" name="plane_detect_node" type="plane_detect_node">
+        <remap from="/camera/depth_registered/points" to="/downsampling_points" />
+    </node>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="plane_detect_pcl" name="downsampling_node" type="downsampling_node"/>
+    <node pkg="plane_detect_pcl" name="plane_detect_node" type="plane_detect_node">
+        <remap from="/camera/depth_registered/points" to="/downsampling_points" />
+    </node>
+</launch>

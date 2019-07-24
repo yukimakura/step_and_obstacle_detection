@@ -1,5 +1,6 @@
 #include "plane_detect.hpp"
 plane_detect::plane_detect(){
+    std::cout << PCL_VERSION << std::endl;
     ros::NodeHandle n_arg("~");
     threshould_ = 0.1;
     n_arg.getParam("threshould", threshould_);
